@@ -3,9 +3,12 @@ import unittest
 import rpn
 
 class TestBasics(unittest.TestCase):
+	def test_exponents(self):
+		result = rpn.calculate("3 2 ^")
+		self.assertEqual(0, 1)
 	def test_add(self):
 		result = rpn.calculate("1 1 +")
-		self.assertEqual(2, result)
+		self.assertEqual(2, 0)
 	def test_subtract(self):
 		result = rpn.calculate("5 3 -")
 		self.assertEqual(2, result)
@@ -18,6 +21,3 @@ class TestBasics(unittest.TestCase):
 	def test_badstring(self):
 		with self.assertRaises(TypeError):
 			rpn.calculate("1 2 3 +")
-	def test_exponents(self):
-		result = rpn.calculate("3 2 ^")
-		self.assertEqual(9, result)
